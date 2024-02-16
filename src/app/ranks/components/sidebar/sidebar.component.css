@@ -1,0 +1,150 @@
+.container {
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filter-title {
+  padding-bottom: 5px;
+  font-size: var(--text-xs);
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sort {
+  position: relative;
+}
+
+.sort__trigger {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--color-2);
+  border-radius: var(--border-radius-1);
+  background-color: transparent;
+  font-weight: 600;
+  font-size: var(--text-s);
+  color: var(--color-5);
+  cursor: pointer;
+}
+
+.sort__options {
+  width: 100%;
+  position: absolute;
+  visibility: hidden;
+  top: 68px;
+  opacity: 0;
+  font-size: var(--text-s);
+  border: 2px solid var(--color-2);
+  border-radius: var(--border-radius-1);
+  background-color: var(--color-1);
+  overflow: hidden;
+}
+
+.open {
+  visibility: visible;
+  animation: open-menu 300ms ease-in-out forwards;
+}
+
+.close {
+  visibility: hidden;
+  animation: close-menu 300ms ease-in-out forwards;
+}
+
+@keyframes open-menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes close-menu {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.sort__options li {
+  padding: 10px 15px;
+  color: var(--color-5);
+  font-weight: var(--semibold);
+  transition: all 300ms;
+}
+
+.sort__options li:hover {
+  background-color: var(--color-2);
+  cursor: pointer;
+}
+
+.regions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: var(--text-s);
+}
+
+.regions__item {
+  padding: 10px 15px;
+  border: 1px solid var(--color-2);
+  outline: none;
+  font-weight: 600;
+  background-color: transparent;
+  border-radius: var(--border-radius-1);
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.regions__item:hover {
+  color: var(--color-5);
+  background-color: var(--color-2);
+}
+
+.regions__item:active {
+  scale: 0.95;
+}
+
+.item-active {
+  color: var(--color-5);
+  background-color: var(--color-2);
+}
+
+.status {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: var(--text-s);
+  color: var(--color-5);
+  gap: 10px;
+}
+
+.status__img {
+  display: block;
+  left: 1px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.status__button {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 2px solid var(--color-4);
+  border-radius: var(--border-radius-2);
+  cursor: pointer;
+}
+
+.active-btn {
+  background-color: var(--color-3);
+  border: 2px solid var(--color-3);
+}

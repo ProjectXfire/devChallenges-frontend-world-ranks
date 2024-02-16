@@ -1,0 +1,28 @@
+@if (!countriesApiService.getLoading) {
+<div class="neighbouring">
+  <p class="neighbouring__title">Neighbouring Countries</p>
+  <ul class="neighbouring__list">
+    @for (country of neighbouring; track $index) {
+    <li
+      class="neighbouring__item"
+      (click)="handleNavigateToCountry(country.name.common)"
+    >
+      <img [src]="country.flags.svg" alt="contry" />
+      <p>{{ country.name.common }}</p>
+    </li>
+    }
+  </ul>
+</div>
+} @else {
+<div class="neighbouring">
+  <p class="neighbouring__title">Neighbouring Countries</p>
+  <ul class="neighbouring-list-skeleton">
+    @for (item of [1,2,3,4]; track item) {
+    <li class="neighbouring-item-skeleton">
+      <div></div>
+      <div></div>
+    </li>
+    }
+  </ul>
+</div>
+}

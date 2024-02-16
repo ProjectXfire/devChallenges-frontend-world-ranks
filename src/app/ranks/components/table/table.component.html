@@ -1,0 +1,43 @@
+<table class="table" mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="flag">
+    <th class="table__header" mat-header-cell *matHeaderCellDef>Flag</th>
+    <td class="table__data" mat-cell *matCellDef="let row">
+      <img class="table__data--img" [src]="row.flags.svg" alt="flag" />
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th class="table__header" mat-header-cell *matHeaderCellDef>Name</th>
+    <td class="table__data" mat-cell *matCellDef="let row">
+      {{ row.name.common }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="population">
+    <th class="table__header" mat-header-cell *matHeaderCellDef>Population</th>
+    <td class="table__data" mat-cell *matCellDef="let row">
+      {{ row.population | numberFormat }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="area">
+    <th class="table__header" mat-header-cell *matHeaderCellDef>Area(km2)</th>
+    <td class="table__data" mat-cell *matCellDef="let row">
+      {{ row.area | numberFormat }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="region">
+    <th class="table__header" mat-header-cell *matHeaderCellDef>Region</th>
+    <td class="table__data" mat-cell *matCellDef="let row">{{ row.region }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    (click)="handleSelectCountry(row)"
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+  ></tr>
+</table>
+<mat-paginator
+  class="table__paginator"
+  [pageSize]="25"
+  [hidePageSize]="true"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page of users"
+></mat-paginator>

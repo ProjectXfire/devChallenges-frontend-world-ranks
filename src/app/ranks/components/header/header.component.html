@@ -1,0 +1,11 @@
+<header class="container">
+  <p>Found {{ totalCountries }} countries</p>
+  <div class="search">
+    <img src="/assets/icons/Search.svg" alt="search" />
+    <input
+      type="text"
+      placeholder="Search by name, region, subregion"
+      (keyup)="handleInputSearch($event)"
+    />
+  </div>
+</header>

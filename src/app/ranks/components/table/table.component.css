@@ -1,0 +1,70 @@
+.table {
+  padding-right: 5px;
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+}
+
+.table__header {
+  font-size: var(--text-xs);
+  color: var(--color-4);
+  border-bottom: 2px solid var(--color-2);
+  cursor: default;
+}
+
+.table__data {
+  font-size: var(--text-xs);
+  color: var(--color-5);
+}
+
+.table__data--img {
+  width: 30px;
+  height: 25px;
+  border-radius: var(--border-radius-2);
+  object-fit: cover;
+}
+
+.table__paginator {
+  background-color: transparent;
+  color: var(--color-4);
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: var(--color-2);
+  cursor: pointer;
+}
+
+td,
+th {
+  padding: 12px 0;
+  width: 25%;
+  border: none;
+}
+
+th:nth-of-type(1) {
+  width: 10%;
+}
+
+td:nth-of-type(1) {
+  width: 100%;
+  display: flex;
+}
+
+@media screen and (min-width: 600px) {
+  .table__data {
+    font-size: var(--text-m);
+    color: var(--color-5);
+  }
+  .table__data--img {
+    width: 50px;
+    height: 35px;
+  }
+}

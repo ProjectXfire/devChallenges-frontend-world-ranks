@@ -1,0 +1,34 @@
+@if (!countriesApiService.getLoading) {
+<ul class="content">
+  <li class="content__item">
+    <p>Capital</p>
+    <p>{{ data.capital.join(", ") }}</p>
+  </li>
+  <li class="content__item">
+    <p>Subregion</p>
+    <p>{{ data.subregion }}</p>
+  </li>
+  <li class="content__item">
+    <p>Language</p>
+    <p>{{ data.languages | objectInfo : "languages" }}</p>
+  </li>
+  <li class="content__item">
+    <p>Currencies</p>
+    <p>{{ data.currencies | objectInfo : "currencies" }}</p>
+  </li>
+  <li class="content__item">
+    <p>Continents</p>
+    <p>{{ data.region }}</p>
+  </li>
+</ul>
+} @else {
+
+<ul class="content-skeleton">
+  @for (item of [1,2,3,4,5]; track item) {
+  <li class="content-skeleton__item">
+    <div class="content-skeleton__item-block"></div>
+    <div class="content-skeleton__item-block"></div>
+  </li>
+  }
+</ul>
+}

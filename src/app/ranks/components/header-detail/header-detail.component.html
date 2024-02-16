@@ -1,0 +1,23 @@
+@if (!countriesApiService.getLoading) {
+<header class="header">
+  <div class="header__name">
+    <p>{{ name }}</p>
+    <p>{{ officialName }}</p>
+  </div>
+  <div class="header__chips">
+    <app-chip field="Population" [value]="population | numberFormat" />
+    <app-chip field="Area (km2)" [value]="area | numberFormat" />
+  </div>
+</header>
+} @else {
+<header class="header-skeleton">
+  <div class="header-skeleton__name">
+    <div class="header-skeleton__name-block"></div>
+    <div class="header-skeleton__name-block"></div>
+  </div>
+  <div class="header-skeleton__chips">
+    <div class="header-skeleton__chips-block"></div>
+    <div class="header-skeleton__chips-block"></div>
+  </div>
+</header>
+}

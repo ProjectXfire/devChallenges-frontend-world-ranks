@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+}
+
+.chip {
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-2);
+  border-radius: var(--border-radius-1);
+  gap: 25px;
+}
+
+.container p {
+  color: var(--color-5);
+}
+
+.container p:nth-of-type(1) {
+  font-size: var(--text-s);
+}
+
+.separator {
+  width: 1px;
+  height: 35px;
+  background-color: var(--color-1);
+}

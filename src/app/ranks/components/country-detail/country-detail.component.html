@@ -1,0 +1,38 @@
+<section class="container">
+  <div class="board">
+    @if (!countriesApiService.getLoading) {
+    <img class="img" [src]="country?.flags?.svg" alt="country" />
+    } @else {
+    <div class="img-skeleton"></div>
+    }
+    <button
+      class="back"
+      type="button"
+      name="back"
+      (click)="handleNavigateToRanks()"
+    >
+      <mat-icon
+        class="back__icon"
+        aria-hidden="false"
+        fontIcon="arrow_back_ios"
+      ></mat-icon>
+    </button>
+    <div class="spacer"></div>
+    <app-header-detail
+      [name]="country?.name?.common ?? ''"
+      [officialName]="country?.name?.official ?? ''"
+      [area]="country?.area ?? 0"
+      [population]="country?.population ?? 0"
+    />
+    <app-content-detail
+      [data]="{
+        capital: country?.capital ?? [],
+        subregion: country?.subregion ?? '',
+        region: country?.region ?? '',
+        currencies: country?.currencies ?? {},
+        languages: country?.languages ?? {},
+      }"
+    />
+    <app-neighbouring-detail [neighbouring]="country?.neighbouring ?? []" />
+  </div>
+</section>

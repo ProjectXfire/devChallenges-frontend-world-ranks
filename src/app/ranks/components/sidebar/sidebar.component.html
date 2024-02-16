@@ -1,0 +1,66 @@
+<aside class="container">
+  <div id="sort" #sort class="filter-box sort">
+    <p class="filter-title">Sort by</p>
+    <button
+      class="sort__trigger"
+      type="button"
+      name="dropdown"
+      (click)="handleMenu()"
+    >
+      {{ countriesService.getSort | titlecase }}
+      <img src="/assets/icons/Expand_down.svg" alt="icon" />
+    </button>
+    <ul
+      class="sort__options"
+      [ngClass]="{ open: isOpenMenu(), close: isOpenMenu() === false }"
+    >
+      @for (option of sortOptions; track option.label) {
+      <li (click)="handleMenuOption(option)">{{ option.label }}</li>
+      }
+    </ul>
+  </div>
+  <div class="filter-box">
+    <p class="filter-title">Region</p>
+    <ul class="regions">
+      @for (region of regions; track region.label) {
+      <li>
+        <button
+          class="regions__item"
+          [ngClass]="{
+            'item-active': countriesService.getFilterByRegions[region.value]
+          }"
+          type="button"
+          (click)="handleSelectedRegions(region)"
+        >
+          {{ region.label }}
+        </button>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="filter-box">
+    <p class="filter-title">Status</p>
+    @for (item of status; track item.label) {
+    <div class="status">
+      <button
+        class="status__button"
+        type="button"
+        [ngClass]="{
+          'active-btn': countriesService.getFilterByStatus[item.value]
+        }"
+        name="check"
+        (click)="handleStatus(item)"
+      ></button>
+      <label>{{ item.label }}</label>
+      @if (countriesService.getFilterByStatus[item.value]) {
+      <img
+        class="status__img"
+        src="/assets/icons/Done_round.svg"
+        alt="check"
+        (click)="handleStatus(item)"
+      />
+      }
+    </div>
+    }
+  </div>
+</aside>

@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --text-l: 32px;
+  --text-m: 16px;
+  --text-s: 14px;
+  --text-xs: 12px;
+  --color-1: #1b1d1f;
+  --color-2: #282b30;
+  --color-3: #4e80ee;
+  --color-4: #6c727f;
+  --color-5: #d2d5da;
+  --color-6: #212427;
+  --semibold: 600;
+  --border-radius-1: 10px;
+  --border-radius-2: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-1) var(--color-4);
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("./assets/fonts/BeVietnamPro-Medium.ttf"),
+    url("./assets/fonts/BeVietnamPro-Bold.ttf"),
+    url("./assets/fonts/BeVietnamPro-SemiBold.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: var(--color-4);
+}
+
+p {
+  margin: 0;
+}
+
+a,
+button {
+  color: inherit;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: var(--color-2);
+  }
+  50% {
+    background-color: var(--color-6);
+  }
+  100% {
+    background-color: var(--color-2);
+  }
+}
