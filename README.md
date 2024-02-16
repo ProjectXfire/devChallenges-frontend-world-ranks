@@ -1,4 +1,4 @@
-# Countries Ranks
+# World Ranks
 
 This project is a list all the countries. You can sort them by name and population, filter by region and status and search by an specific value (name, region and subregion).
 You can select one country and see more detail.
